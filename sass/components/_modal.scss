@@ -1,6 +1,7 @@
 /* ---------------MODAL-------------- */
 
 .backdrop {
+    z-index: 21;
     position: fixed;
     top: 0;
     left: 0;
@@ -183,7 +184,7 @@
         line-height: 1.166;
         @include desktop {
             font-size: 14px;
-            line-height: 1.714;
+            line-height: 1;
         }
     }
 

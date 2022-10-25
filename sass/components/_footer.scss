@@ -124,7 +124,8 @@
         max-width: 450px;
     }
     @include desktop {
-    margin-left: 93px;
+        max-width: 570px;
+    margin-left: auto;
     }
     
     &__text {     

@@ -322,7 +322,7 @@ body {
   padding: 0;
   background-color: transparent;
   border: none;
-  z-index: 33;
+  z-index: 20;
 }
 .header__btn is-open {
   position: fixed;
@@ -428,20 +428,24 @@ body {
 }
 
 .mobile-menu__tel {
+  font-weight: 500;
   font-size: 34px;
-  line-height: 1.18;
+  line-height: 1.176;
+  letter-spacing: 0.02em;
   color: var(--accent-color);
   margin-bottom: 32px;
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 320px) {
   .mobile-menu__tel {
-    font-size: 30px;
+    font-size: 26px;
   }
 }
 
 .mobile-menu_mail {
+  font-weight: 500;
   font-size: 24px;
-  line-height: 1.17;
+  line-height: 1.166;
+  letter-spacing: 0.02em;
   color: var(--primary-text-color);
 }
 
@@ -464,11 +468,13 @@ body {
 }
 
 .mobile-menu__link-item {
+  font-weight: 500;
   font-size: 18px;
+  line-height: 1.22;
   letter-spacing: 0.02em;
   color: var(--accent-color);
 }
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 320px) {
   .mobile-menu__link-item {
     font-size: 12px;
   }
@@ -500,9 +506,19 @@ body {
   background-size: cover;
   background-color: var(--second-bg-color);
 }
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg-mob2x.jpg);
+  }
+}
 @media screen and (min-width: 768px) {
   .hero {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg-tab.jpg);
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg-tab2x.jpg);
   }
 }
 @media screen and (min-width: 1200px) {
@@ -511,6 +527,11 @@ body {
     padding-top: 200px;
     padding-bottom: 200px;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg-image.jpg);
+  }
+}
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg-image2x.jpg);
   }
 }
 .hero__title {
@@ -896,7 +917,8 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .subscribe {
-    margin-left: 93px;
+    max-width: 570px;
+    margin-left: auto;
   }
 }
 .subscribe__text {
@@ -1050,6 +1072,7 @@ body {
 
 /* ---------------MODAL-------------- */
 .backdrop {
+  z-index: 21;
   position: fixed;
   top: 0;
   left: 0;
@@ -1222,7 +1245,7 @@ body {
 @media screen and (min-width: 1200px) {
   .checkbox__text {
     font-size: 14px;
-    line-height: 1.714;
+    line-height: 1;
   }
 }
 .checkbox__link {
