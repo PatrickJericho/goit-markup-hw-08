@@ -1,13 +1,26 @@
 .features {
     &__list {
-        display: flex;
+        // display: flex;
+        // flex-wrap: wrap;
         padding-inline-start: 0px;
-        margin: 0px;
-        list-style-type: none;        
+        // margin: 0px;
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: auto;
+        margin-right: auto;
+        list-style-type: none;   
+        
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }  
+        @include desktop {
+            grid-template-columns: repeat(4, 1fr);
+        }  
     }
-    &__item:not(:last-child) {
-        margin-right: 30px;
-    }
+    // &__item:not(:last-child) {
+    //     margin-right: 30px;
+    // }
     &__item::before {
         display: block;
         content: "";
@@ -38,12 +51,17 @@
         line-height: 1.14;
         text-transform: uppercase;
         margin-bottom: 10px;
+        text-align: center;
+
+        @include tablet {
+            text-align: left;
+        }
     }
     &__text {
         color: var(--primary-text-color);
         font-size: 14px;
         line-height: 1.71;
-        width: 270px;
+        // width: 270px;
         margin: 0px;
     }
 }

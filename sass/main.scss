@@ -1,4 +1,5 @@
 //BASE (RESET,GLOBAL,HIDDEN)
+@import './utils/mixin';
 @import './base/reset';
 @import './base/global';
 @import './base/hidden';
@@ -11,6 +12,7 @@
 //COMPONENTS (HEADER, SECTIONS, FOOTER)
 @import './components/logo';
 @import './components/header';
+@import './components/mob-menu';
 @import './components/hero';
 @import './components/features';
 @import './components/devs';

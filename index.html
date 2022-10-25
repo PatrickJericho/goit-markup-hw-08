@@ -45,6 +45,53 @@
             >
           </li>
         </ul>
+        <button class="header__btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-button>
+          <svg class="header__btn-icon" width="40px" height="40px">
+            <use class="header__btn-open" href="./images/icons.svg#icon-burger"></use>
+            <use class="header__btn-close" href="./images/icons.svg#icon-close-menu"></use>
+          </svg>
+        </button>
+
+        <div class="mobile-menu" id="mobile-menu" data-menu>
+          <div class="mobile-menu__wrapper">
+            <ul class="mobile-menu__list">
+              <li class="mobile-menu__item">
+                <a href="./index.html" class="mobile-menu__link current">Студия</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="./portfolio.html" class="mobile-menu__link">Портфолио</a>
+              </li>
+              <li class="mobile-menu__item">
+                <a href="./contact.html" class="mobile-menu__link">Контакты</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <ul class="mobile-menu__list">
+              <li class="mobile-menu__point">
+                <a href="tel:+380961111111" class="mobile-menu__tel">+38 096 111 11 11</a>
+              </li>
+              <li>
+                <a href="mailto:info@devstudio.com" class="mobile-menu_mail">info@devstudio.com</a>
+              </li>
+            </ul>
+            <ul class="mobile-menu__links">
+              <li class="mobile-menu__social">
+                <a href="" class="mobile-menu__link-item">Instagram</a>
+              </li>
+              <li class="mobile-menu__social">
+                <a href="" class="mobile-menu__link-item">Twitter</a>
+              </li>
+              <li class="mobile-menu__social">
+                <a href="" class="mobile-menu__link-item">Facebook</a>
+              </li>
+              <li class="mobile-menu__social">
+                <a href="" class="mobile-menu__link-item">LinkedIn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </header>
     <!-- main content -->
@@ -376,6 +423,7 @@
         </div>
       </div>
     </footer>
+
     <div class="backdrop is-hidden" data-modal>
       <div class="modal" data-modal>
         <button class="modal__close-button" type="button" data-modal-close>
@@ -427,6 +475,7 @@
         </form>
       </div>
     </div>
+    <script src="./js/mobile-menu.js"></script>
     <script src="./js/modal.js"></script>
   </body>
 </html>

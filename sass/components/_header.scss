@@ -1,6 +1,6 @@
 .header {
     max-width: 1600px;
-    height: 80px;
+    // position: absolute;
     margin-left: auto;
     margin-right: auto;
     background-color: var(--primary-bg-color);
@@ -9,20 +9,39 @@
     //     display: flex;
     //     align-items: center;
     // }
-    &__logo {
-    margin-right: 93px;
+    height: 60px;
+    @include tablet {
+        height: 80px;
     }
+    &__logo { 
+        padding: 16px 0;    
+    @include tablet {
+        padding: 0;
+        margin-right: 87px;
+    }   
+    @include desktop {
+        margin-right: 93px;
+    }
+    }
+
 }
 
 .container--header {
     display: flex;
     align-items: center;
+    @include tablet {
+        // justify-content: space-around;
+        
+    }
 }
 
 .nav__list {
-    list-style-type: none;
-    display: flex;
+    display: none;
+    list-style-type: none;    
     padding-left: 0px;
+    @include tablet {
+        display: flex;
+    }
 }
 
 .nav__item:not(:last-child) {
@@ -64,15 +83,34 @@
 .contact {    
     padding-inline-start: 0px;
     list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto; 
+    display: none;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // margin-left: auto; 
+    @include tablet {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;        
+        align-items: flex-start;        
+        padding-left: 0px;
+        margin-left: auto;
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    @include desktop {
+        gap: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        flex-direction: unset;
+    }
     &__link {
         color: var(--primary-text-color);
         font-weight: 500;
-        font-size: 14px;
-        line-height: 1.14;
+        font-size: 12px;
+        line-height: 1.16;
         letter-spacing: 0.02em;
         text-decoration: none;
         text-align: center;
@@ -80,17 +118,81 @@
         justify-content: center;
         align-items: center;
         transition: color var(--duration-time) var(--function-time);
+        @include desktop {
+            font-size: 14px;
+            line-height: 1.14;
+        }
         &:focus,
         &:hover {
             color: var(--accent-color);
         }
+        
     }
     &__phone,
     &__mail {
         fill: currentColor;
         margin-right: 10px;
     }
-    &__item:not(:last-child) {
-        margin-right: 50px;
+    // &__item:not(:last-child) {
+    //     margin-right: 50px;        
+    // }
+    &__item {
+        gap: 50px;
     }
+}
+
+.header__btn {
+    top: 10px;
+    right: 15px;
+    margin-left: auto;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    z-index: 33;
+    & is-open {
+        position: fixed;
+        top: 0;
+        right: 21px;
+    }
+    @include tablet {
+        display: none;
+    }   
+
+    &:hover .header__btn-open {
+        fill: var(--accent-color);
+        transition: fill var(--duration-time) var(--function-time);
+    }
+
+    &:focus .header__btn-open {
+        fill: var(--accent-color);
+        transition: fill var(--duration-time) var(--function-time);
+    }
+
+    &:hover .header__btn-close {
+        fill: var(--accent-color);
+        transition: fill var(--duration-time) var(--function-time);
+    }
+
+    &:focus .header__btn-close {
+        fill: var(--accent-color);
+        transition: fill var(--duration-time) var(--function-time);
+    }
+
+}
+.header__btn.is-open {
+    position: fixed;
+}
+.header__btn-open {
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+}
+.header__btn-close {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+.header__btn.is-open .header__btn-open {
+    opacity: 0;
+}
+.header__btn.is-open .header__btn-close {
+    opacity: 1;
 }

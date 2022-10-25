@@ -1,5 +1,10 @@
 .devs {
     padding-top: 0px;
+    display: none;
+
+    @include desktop {
+        display: block;
+    }
     &__title {
             color: var(--title-text-color);
             font-weight: 700;

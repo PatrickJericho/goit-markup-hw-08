@@ -3,24 +3,35 @@
     &__title {
         color: var(--title-text-color);
         font-weight: 700;
-        font-size: 36px;
+        font-size: 28px;
         line-height: 1.666;
         text-align: center;
         margin-bottom: 50px;
+        @include desktop {
+                font-size: 36px;
+            }
     }
     &__list {
         list-style-type: none;
         padding-inline-start: 0;
-        display: flex;
+        // display: flex;
+        display: grid;
         justify-content: center;
         align-items: center;
         gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        @include tablet {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include desktop {
+            grid-template-columns: repeat(6, 1fr);
+        }
     }
     &__link {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 170px;
+        width: auto;
         height: 92px;
         border: #AFB1B8 1px solid;
         border-radius: 4px;

@@ -5,8 +5,9 @@
     top: 0;
     left: 0;
     opacity: 1;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
     background-color: rgba(0, 0, 0, 0.2);
     transition: visibility 700ms, opacity 700ms var(--function-time);
     &.is-hidden {
@@ -17,14 +18,17 @@
     &.is-hidden .modal {
         transform: translate(0%, -100%) scale(0);
     }
+        overflow: scroll;
+    
 }
 
 .modal {
     position: relative;
     top: 50%;
     left: 50%;
-    width: 528px;
-    height: 581px;
+    max-width: 528px;
+    max-height: 609px;  
+    height: 100%;  
     padding: 40px;
     transform: translate(-50%, -50%) scale(1);
     background-color: var(--primary-bg-color);
@@ -32,6 +36,10 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     transition: transform 700ms;
+    @include desktop {
+        max-height: 581px;
+    }
+    
 
 &__close-button {
     position: absolute;
@@ -58,15 +66,21 @@
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
     text-align: center;
     color: var(--title-text-color);
+    @include desktop {
+        line-height: 1.15;
+    }
+
 }
 }
 
 /* ---------MODAL FORM------ */
 
 .form {
+    display: flex;
+    flex-direction: column;
     &__item {
         margin-bottom: 10px;
     }
@@ -84,9 +98,10 @@
     }
     &__box {
         position: relative;
+        
     }
-    &__input {
-        width: 448px;
+    &__input {        
+        width: 100%;
         height: 40px;
         padding: 11px 42px;
         outline: none;
@@ -110,8 +125,9 @@
         transition: fill var(--duration-time) var(--function-time);
     }
     &__comment {
-        width: 448px;
+        width: 100%;
         height: 120px;
+        // height: 100%;
         padding: 12px 16px;
         resize: none;
         font-style: normal;
@@ -152,7 +168,7 @@
         justify-content: center;
         align-items: center;
         margin-right: 7px;
-        width: 16px;
+        min-width: 16px;
         height: 15px;
         border: 0.2px solid var(--title-text-color);
         border-radius: 2px;
@@ -163,8 +179,12 @@
         display: block;
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
-        line-height: 1.714;
+        font-size: 12px;
+        line-height: 1.166;
+        @include desktop {
+            font-size: 14px;
+            line-height: 1.714;
+        }
     }
 
     &__link {
@@ -174,6 +194,7 @@
 }
 
 .send__button {
+    max-width: 200px;
     display: block;
     margin: 0 auto;
     padding: 10px 52px;
@@ -190,5 +211,8 @@
     text-align: center;
     letter-spacing: 0.06em;
     cursor: pointer;
-    border-style: none;        
+    border-style: none;      
+    @media screen and (max-width: 320px){
+        padding: 10px 25px;
+    }  
 }
